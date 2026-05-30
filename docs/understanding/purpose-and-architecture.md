@@ -10,8 +10,10 @@ sidebar_label: Purpose & Architecture
 # Sentinels: Purpose and Architecture
 
 This file answers "what is the purpose of a Sentinel?" — honestly. The most important
-fact to absorb first: **Zenon's own primary documents describe Sentinels in three
-materially different ways, and they do not fully agree.** A faithful model must hold all
+fact to absorb first: **Zenon's whitepaper, lightpaper, and greenpaper describe Sentinels
+in three materially different ways, and they do not fully agree.** (The whitepaper and
+lightpaper are core-team documents; the greenpaper's normative status is less clear — see
+[Sources](./sources.md).) A faithful model must hold all
 three accounts and flag where they conflict, rather than collapsing them into one tidy
 story.
 

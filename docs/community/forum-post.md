@@ -1,10 +1,12 @@
 ---
 sidebar_position: 1
 sidebar_label: Forum Post
-title: The Sentinel framework is already inside Syrius
 ---
 
 # The Sentinel framework is already inside Syrius — let's finish it
+
+> 📣 Discuss this on the hypercore.one forum: **[wer-sentinel](https://forum.hypercore.one/t/wer-sentinel/925)**.
+> Background context: the [Upgrade Preview video](./video.md).
 
 **TL;DR:** Syrius doesn't just *connect* to a node — it already **runs a full go-zenon node
 inside the wallet** and serves RPC from it. Add the live Sentinel staking UI, the node

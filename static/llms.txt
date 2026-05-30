@@ -31,6 +31,6 @@
 
 ## Source code
 
-- Syrius (submodule, pinned v0.1.0-alphanet-8): https://github.com/zenon-network/syrius
+- Syrius (submodule, pinned v0.2.4-alphanet): https://github.com/zenon-network/syrius
 - SDK: znn_sdk_dart v0.0.7
 - Primary papers: https://github.com/TminusZ/zenon-developer-commons

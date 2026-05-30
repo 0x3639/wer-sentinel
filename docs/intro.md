@@ -2,7 +2,6 @@
 sidebar_position: 1
 slug: /
 sidebar_label: Overview
-title: Sentinels in Syrius
 ---
 
 # Sentinels in Syrius
@@ -46,6 +45,8 @@ tagged throughout (`[DOC]` documented · `[INF]` inferred · `[OPEN]` unresolved
 ## Source code
 
 The Syrius source is included as a git submodule at `syrius/` (pinned at
-`v0.1.0-alphanet-8`). All `file:line` references in these docs point into it. The SDK is
-`znn_sdk_dart v0.0.7`. **Always re-verify a reference against the current source before
-acting on it.**
+`v0.2.4-alphanet`). Most `file:line` references point into `syrius/`; some point into the
+pinned SDK `znn_sdk_dart v0.0.7` (paths like `api/embedded/...` or `model/embedded/...`),
+which is **not** vendored in `syrius/` — verify those via `syrius/pubspec.lock` and your
+local pub cache. **Always re-verify a reference against the current source before acting on
+it.**

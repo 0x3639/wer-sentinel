@@ -19,7 +19,7 @@ docs/
   specification/                   The design contract (v1, peer-reviewed)
   implementation/                  Build roadmap + AI agent guide
   community/forum-post.md          Community-facing pitch
-syrius/                            Syrius source, git submodule (pinned v0.1.0-alphanet-8)
+syrius/                            Syrius source, git submodule (pinned v0.2.4-alphanet)
 static/llms.txt                    AI index of the doc set
 ```
 

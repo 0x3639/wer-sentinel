@@ -16,11 +16,24 @@ file refer to the original local **Markdown** conversions used at authoring time
 
 ---
 
-## Primary sources (in zenon-developer-commons)
+## Sources (in zenon-developer-commons)
+
+Not all of these are equally authoritative. Tiered by how the documents identify
+themselves:
+
+**Core-team primary documents** (filenames marked `CORE_TEAM`):
 
 - **zenon-whitepaper** — [`2_ZENON_WHITEPAPER_(CORE_TEAM).pdf`](https://github.com/TminusZ/zenon-developer-commons/blob/main/2_ZENON_WHITEPAPER_%28CORE_TEAM%29.pdf)
 - **zenon-lightpaper** — [`1_ZENON_LIGHTPAPER_(CORE_TEAM).pdf`](https://github.com/TminusZ/zenon-developer-commons/blob/main/1_ZENON_LIGHTPAPER_%28CORE_TEAM%29.pdf)
+
+**Other Zenon documents** (not `CORE_TEAM`-labelled; treat normative status as `[OPEN]`
+until confirmed against the PDF itself):
+
 - **zenon-greenpaper** — [`ZENON_GREENPAPER.pdf`](https://github.com/TminusZ/zenon-developer-commons/blob/main/ZENON_GREENPAPER.pdf)
+
+**Community / secondary** (self-identifies as a community paper — **not** a primary
+source; claims sourced solely to it are community-derived, not core-normative):
+
 - **zenon-whitepaper-decoded** — [`ZENON_WHITEPAPER_DECODED:EXPANDED_COMMUNITY_PAPER.pdf`](https://github.com/TminusZ/zenon-developer-commons/blob/main/ZENON_WHITEPAPER_DECODED%3AEXPANDED_COMMUNITY_PAPER.pdf)
 
 ## Repository research notes (basis for `[INF]` claims, not `[DOC]`)

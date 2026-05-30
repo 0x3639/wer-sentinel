@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+sidebar_label: Service Layer Spec
+---
+
 # Sentinel Service Layer Specification — v1
 
 **Syrius-Facing Public Verification Nodes for NoM**
@@ -44,11 +49,14 @@ NoM Full Nodes / Pillars (consensus)
 
 Pillars remain the consensus backbone. Sentinels become the public edge layer.
 
-> **Note on provenance.** Zenon's primary papers *conflict* on the Sentinel's role
-> (whitepaper: observer, not in consensus; lightpaper: sharding consensus participant;
-> greenpaper: light-client relay). This spec adopts the greenpaper "service edge" reading
-> because it is the only one buildable today without protocol changes — but it is a *design
-> choice*, not settled protocol. See [Purpose & Architecture](../understanding/purpose-and-architecture.md).
+> **Note on provenance.** Zenon's whitepaper, lightpaper, and greenpaper *conflict* on the
+> Sentinel's role (whitepaper: observer, not in consensus; lightpaper: sharding consensus
+> participant; greenpaper: light-client relay). The whitepaper and lightpaper are core-team
+> documents; the greenpaper's normative status is less clear. This spec adopts the
+> greenpaper "service edge" reading because it is the only one buildable today without
+> protocol changes — but it is a *design choice*, not settled protocol. See
+> [Purpose & Architecture](../understanding/purpose-and-architecture.md) and
+> [Sources](../understanding/sources.md).
 
 ---
 
@@ -261,6 +269,12 @@ Status bands:
 
 > Reachability and chain ID are intentionally **absent** from the additive score — they are
 > gates in §7. A node that fails them is excluded, not low-scored.
+
+> **Mnemonic.** These dimensions map onto the community "Upgrade Preview" mnemonic —
+> SIZE (history served), SPEED (latency/sync), POWER (capacity/uptime), BUMP (peer
+> propagation/relay), SLIDE (failover/routing). It's a handy memory aid for operators; the
+> authoritative thresholds and weights are this section and §7. See
+> [Upgrade Preview video](../community/video.md).
 
 ---
 

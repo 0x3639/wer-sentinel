@@ -34,7 +34,7 @@ When documents disagree, trust in this order:
 ## Non-negotiable rules
 
 - **Verify before you build.** Every `file:line` reference in these docs was true at SDK
-  `v0.0.7` / Syrius submodule `v0.1.0-alphanet-8`. Re-open the file and confirm before you
+  `v0.0.7` / Syrius submodule `v0.2.4-alphanet`. Re-open the file and confirm before you
   edit — the submodule may have moved. If a reference is stale, fix the doc.
 - **Respect the MVP boundary.** Do not introduce a consensus/protocol change for anything
   scoped as off-chain (Roadmap Phases A–B). The only protocol work is Phase C, and it needs

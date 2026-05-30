@@ -34,10 +34,12 @@ fair description.
 
 1. **The embedded node is not configurable from Syrius today.** The FFI surface is
    `RunNode()` / `StopNode()` with **zero arguments** (`embedded_node.dart:15-21,96`), and
-   Syrius writes no node config. The node runs with whatever is baked into `libznn`, bound
-   to localhost. Making it serve *publicly* (bind `0.0.0.0`, TLS/`wss`) is real work that
-   lives in **`libznn` / go-zenon**, not just Syrius Dart/UI. This is the single biggest
-   under-stated item.
+   Syrius writes no node config. The node runs with whatever is baked into `libznn`. Syrius
+   *reaches* it at `127.0.0.1:35998`, but whether the server **also** binds a public
+   interface is **not determinable from `syrius/`** — the bind address lives in go-zenon's
+   config, not in Dart (see §6). Either way, making it serve *publicly* (bind `0.0.0.0`,
+   TLS/`wss`) is real work that lives in **`libznn` / go-zenon**, not just Syrius Dart/UI.
+   This is the single biggest under-stated item.
 2. **A desktop GUI is an awkward host for an always-on public node.** Syrius is an
    interactive app (it even acquires a `WakelockPlus` while the embedded node runs —
    `node_utils.dart:238`); a Sentinel is expected to be 24/7 infrastructure. Nothing blocks
@@ -55,7 +57,7 @@ expose the node and the lifecycle change to keep it serving.**
 | Capability | Evidence (`file:line`) | Status |
 | ---------- | ---------------------- | ------ |
 | **Runs a full node in-process** (go-zenon as `libznn`, FFI) | `embedded_node.dart:50-56` (lib load), `:82-84` (`RunNode` symbol), `node_utils.dart:243` (`Isolate.spawn(EmbeddedNode.runNode, [''])`) | **Confirmed** — Syrius *is* a node host |
-| **That node already serves WS RPC locally** | `node_utils.dart:235` connects to `kLocalhostDefaultNodeUrl` immediately after start; `constants.dart:123-124` = `ws://127.0.0.1:35998` | **Confirmed** — an RPC server is already running, just bound to localhost |
+| **That node already serves WS RPC, reachable at localhost** | `node_utils.dart:235` connects to `kLocalhostDefaultNodeUrl` immediately after start; `constants.dart:123-124` = `ws://127.0.0.1:35998` | **Confirmed** that an RPC server is running and Syrius reaches it at `127.0.0.1`. The server's actual *bind interface* is **not** proven by `syrius/` (see §6) — "localhost-only" is an inference, not established. |
 | **Sentinel staking lifecycle UI** (register/deposit/withdraw/collect/revoke) | `lib/widgets/modular_widgets/sentinel_widgets/*`; SDK `api/embedded/sentinel.dart:17-67` | **Confirmed** |
 | **Node management with multiple tiers + switching** | `node_management_screen.dart` (`kEmbeddedNode`, `kLocalhostDefaultNodeUrl`, `kDbNodes`, `kDefaultCommunityNodes`); validator `InputValidators.node` | **Confirmed** |
 | **Discovery slot: implemented loader, empty data** | loader `main.dart:180-192` (validates + lists), shuffle `node_management_screen.dart:43`; `assets/community-nodes.json` = `[]` | **Confirmed — ready to populate** |
@@ -63,6 +65,11 @@ expose the node and the lifecycle change to keep it serving.**
 
 This is the real basis for "the framework is done." None of it is fabricated by the source
 documents.
+
+> **On `file:line` paths:** references under `lib/...` are in the `syrius/` submodule;
+> references under `api/embedded/...` or `model/embedded/...` are in the pinned
+> `znn_sdk_dart` SDK (**not** vendored in `syrius/`) — verify those via `syrius/pubspec.lock`
+> and your local pub cache.
 
 ---
 
@@ -301,8 +308,9 @@ Confirmed dormant items:
    animation ready. `Tabs.sync` has a full sync progress icon widget.
 2. `community-nodes.json` is empty `[]` — the infrastructure to populate and use it is
    complete. This is a deliberate empty slot.
-3. `kLocalIpAddress` global variable is declared in `global.dart` but never assigned or
-   used anywhere in the current codebase.
+3. `kLocalIpAddress` global variable is declared in `global.dart`. *(Correction: in the
+   pinned Syrius it **is** assigned at `main.dart:255` and displayed in
+   `about_card.dart:134`; the original "never assigned or used" claim is outdated.)*
 4. `// wallet!.registerEventEmitter(chainId: getChainId(), event: 'chainIdChange');` —
    commented out event emitters in WalletConnect service.
 5. `// _wcClient!.onAuthRequest.subscribe(_onAuthRequest);` — auth request handler stubbed
@@ -374,9 +382,15 @@ Syrius treats Sentinels in two completely separate contexts that were never conn
 2. **Service node** — implicit, infrastructurally ready, but the bridge (Sentinel IP → RPC
    URL → node list) was never built
 
-The `SentinelsListBloc?` model ghost-typed into the Peers widget is the strongest single
-clue that someone was actively working on merging these two contexts before the work
+The `SentinelsListBloc?` model parameter in the Peers widget was originally read as the
+strongest single clue that someone was actively merging these two contexts before the work
 stopped.
+
+> **Correction (supersedes the paragraph above):** re-verification shows this parameter is
+> **unused dead code** — the closure body ignores it (`peers.dart:51`), the same optional
+> param is copy-pasted into two unrelated tables, and neither table typedef even declares it
+> (`custom_table.dart:13`, `infinite_scroll_table.dart:16`). It is **not** evidence of
+> in-progress Sentinel wiring. See §4.1.
 
 ---
 
