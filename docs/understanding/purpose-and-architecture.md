@@ -139,15 +139,25 @@ Reconciling the accounts into a working mental model (inference where noted):
 - **Light clients** — verify via cryptographic commitments; the greenpaper positions
   Sentinels as their relay-availability backbone. `[DOC]`
 
-> **Note on the repo's "middle-layer" framing.** The draft notes in zenon-developer-commons
-> ([`docs/notes/sentinel-middle-layer.md`](https://github.com/TminusZ/zenon-developer-commons/blob/main/docs/notes/sentinel-middle-layer.md),
-> [`docs/notes/sentinel-finalization-layer.md`](https://github.com/TminusZ/zenon-developer-commons/blob/main/docs/notes/sentinel-finalization-layer.md))
-> describe Sentinels as a *feeless* deterministic validation/filtering layer that checks
-> account-chain structure, micro-PoW, and embedded contract-call formatting before data
-> reaches Pillars. That is a coherent and useful architectural reading, but it is largely
-> `[INF]` — and it **drops the whitepaper's transaction-fee model**, which is the basis
-> for the documented PoW-link mechanism. When training on this material, mark the
-> structural-filter description as inference, not protocol fact. `[INF]`
+> **Note on the repo's "middle-layer" framing.** Two draft notes in zenon-developer-commons
+> describe the same role from different angles, and they should not be conflated:
+>
+> - [`docs/notes/sentinel-middle-layer.md`](https://github.com/TminusZ/zenon-developer-commons/blob/main/docs/notes/sentinel-middle-layer.md)
+>   frames Sentinels as a *feeless* deterministic **validation/filtering** layer that checks
+>   account-chain structure, micro-PoW, and embedded contract-call formatting before data
+>   reaches Pillars.
+> - [`docs/notes/sentinel-finalization-layer.md`](https://github.com/TminusZ/zenon-developer-commons/blob/main/docs/notes/sentinel-finalization-layer.md)
+>   is narrower: it casts Sentinels as a **verification + anchoring/observation** layer that
+>   makes validated transitions discoverable and **supports light-client / SPV-style
+>   verification** — and it is careful to separate documented behavior from inference. That
+>   anchoring-for-light-clients reading actually *aligns with* the greenpaper "relay
+>   availability for light clients" framing this site adopts (§4), rather than the
+>   contract-call filtering described in the middle-layer note.
+>
+> Both readings are coherent and useful, but largely `[INF]`. The filtering reading in
+> particular **drops the whitepaper's transaction-fee model**, which is the basis for the
+> documented PoW-link mechanism. When training on this material, mark these structural-filter
+> and anchoring descriptions as inference, not protocol fact. `[INF]`
 
 ---
 
@@ -178,4 +188,5 @@ the Sentinel's concrete purpose **genuinely unsettled**. `[OPEN]`
 - **Greenpaper:** an on-chain, rewarded node that improves relay availability for light
   clients. `[DOC]`
 - **Repo research notes:** a feeless deterministic filtering/validation layer between
-  Sentries and Pillars. `[INF]`
+  Sentries and Pillars (`sentinel-middle-layer.md`), and a verification + anchoring layer
+  that supports light-client/SPV verification (`sentinel-finalization-layer.md`). `[INF]`
