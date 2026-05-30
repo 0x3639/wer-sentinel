@@ -1,0 +1,37 @@
+/**
+ * Theme overrides. Zenon-flavored green accent.
+ */
+
+:root {
+  --ifm-color-primary: #2fae84;
+  --ifm-color-primary-dark: #2a9d77;
+  --ifm-color-primary-darker: #279470;
+  --ifm-color-primary-darkest: #207a5c;
+  --ifm-color-primary-light: #41bd93;
+  --ifm-color-primary-lighter: #4dc29a;
+  --ifm-color-primary-lightest: #6eccad;
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #4dd1a6;
+  --ifm-color-primary-dark: #38c897;
+  --ifm-color-primary-darker: #30bd8e;
+  --ifm-color-primary-darkest: #289c75;
+  --ifm-color-primary-light: #66d8b4;
+  --ifm-color-primary-lighter: #73dbba;
+  --ifm-color-primary-lightest: #97e5cd;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Slightly tighter tables for the evidence/spec dumps. */
+.markdown table {
+  display: table;
+  width: 100%;
+}
+
+.markdown table th,
+.markdown table td {
+  vertical-align: top;
+}

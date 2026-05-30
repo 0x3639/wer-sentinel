@@ -1,0 +1,5 @@
+{
+  "label": "The Investigation",
+  "position": 3,
+  "link": { "type": "generated-index", "description": "Forensic proof, with file:line receipts, that the Sentinel framework already exists in Syrius." }
+}

@@ -1,0 +1,36 @@
+# Sentinels in Syrius
+
+> Evidence-backed documentation for implementing a Sentinel service node that runs from
+> inside the Syrius wallet. Syrius already runs a full Zenon node in-process and serves RPC
+> from it; the framework to be a Sentinel is present, and the MVP needs no consensus change.
+> Claims about Syrius carry file:line receipts; provenance is tagged [DOC]/[INF]/[OPEN].
+
+## Start here
+
+- [Overview](/): the thesis, how the docs are organized, and where to start.
+- [AI Agent Guide](/implementation/agent-guide): how an AI agent should use these docs to implement the work; source-of-truth hierarchy and non-negotiable rules.
+
+## Understanding Sentinels
+
+- [Purpose & Architecture](/understanding/purpose-and-architecture): the three conflicting documented roles of a Sentinel.
+- [Economics & Open Questions](/understanding/economics-and-open-questions): staking, incentives, the fee-vs-feeless tension.
+- [Sources & Provenance](/understanding/sources): every [DOC] claim mapped to a primary source.
+
+## The Investigation (evidence)
+
+- [Investigation & Evidence](/evidence/investigation): forensic proof that the framework is in Syrius, with file:line receipts and a raw Q&A appendix.
+
+## Build it
+
+- [Specification](/specification/sentinel-service-layer): the design contract for the Sentinel service layer (v1, peer-reviewed).
+- [Build Roadmap](/implementation/roadmap): ordered, scoped tasks with code anchors and acceptance criteria.
+
+## Community
+
+- [Forum Post](/community/forum-post): the community-facing pitch.
+
+## Source code
+
+- Syrius (submodule, pinned v0.1.0-alphanet-8): https://github.com/zenon-network/syrius
+- SDK: znn_sdk_dart v0.0.7
+- Primary papers: https://github.com/TminusZ/zenon-developer-commons
