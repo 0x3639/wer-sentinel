@@ -55,4 +55,25 @@ The video lands on a line that doubles as a neat summary of this whole investiga
 The verification-first reading (Spec §10: *don't trust the server — you hold the key, you
 verify*) and the thesis of this whole repo (the Sentinel framework was *already right in
 front of us*, sitting unfinished inside Syrius) are both in that line. Motivational, not
-evidence — but a good mnemonic for why this is worth finishing.
+evidence — but a good mnemonic for why this is worth finishing. Full transcript below.
+
+## Transcript
+
+```text
+[Music]
+I'm done with me
+You can take it slow, or pedal to the floor
+Anywhere you want to be
+You are the key
+The place I want to be
+I think that my need is right in front of me
+You are the key — Answer to my dreams
+And I can't believe you're in front of me
+You are the key — All the place I want to be
+
+(chorus repeats: "You are the key / Answer to my dreams /
+ And I can't believe you're in front of me")
+```
+
+*Transcribed from the [video](https://www.youtube.com/watch?v=ZdD9mgk4iqs); lyrics are the
+artist's. Reproduced here as community context, not technical evidence.*
