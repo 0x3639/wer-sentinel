@@ -132,7 +132,8 @@ has a **hard prerequisite the v0 spec omitted**:
 > Syrius cannot currently configure the embedded node. The FFI exposes only `RunNode()` and
 > `StopNode()` with **no arguments** (`embedded_node.dart:15-21,96`), and Syrius writes no
 > node config (only logs use the data dir, `main.dart:56`). The node runs with whatever
-> config is baked into `libznn`, bound to localhost.
+> config is baked into `libznn`; Syrius reaches it at `127.0.0.1:35998`, and whether it
+> *also* binds a public interface is not determinable without the `libznn`/go-zenon source.
 
 **Required work for Model B (no consensus change, but not Syrius-only):**
 - Extend the `libznn` FFI to accept config (bind address, port, enable public RPC, TLS), **or**

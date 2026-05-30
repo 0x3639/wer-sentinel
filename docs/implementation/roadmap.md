@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 sidebar_label: Build Roadmap
-title: Build Roadmap
 ---
 
 # Build Roadmap — Sentinel service node in Syrius

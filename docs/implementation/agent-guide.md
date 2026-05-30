@@ -1,7 +1,6 @@
 ---
 sidebar_position: 2
 sidebar_label: AI Agent Guide
-title: AI Agent Guide
 ---
 
 # AI Agent Guide — building the Sentinel service node in Syrius

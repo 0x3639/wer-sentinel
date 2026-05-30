@@ -1,7 +1,6 @@
 ---
 sidebar_position: 2
 sidebar_label: Upgrade Preview Video
-title: "Upgrade Preview video — the SIZE/SPEED/POWER/BUMP/SLIDE mnemonic"
 ---
 
 # Upgrade Preview video
@@ -46,3 +45,14 @@ In other words, the video's five-word mnemonic is a friendly restatement of the
 **gate-and-score health model** the spec already defines (§7–§8) plus **failover** (§6 /
 Roadmap B.4). It's a nice way to remember what "a good Sentinel" means; the spec is where
 the actual thresholds and weights live.
+
+## A fitting lyric
+
+The video lands on a line that doubles as a neat summary of this whole investigation:
+
+> *"You are the key, the answer to my dreams and I can't believe you're right in front of me."*
+
+The verification-first reading (Spec §10: *don't trust the server — you hold the key, you
+verify*) and the thesis of this whole repo (the Sentinel framework was *already right in
+front of us*, sitting unfinished inside Syrius) are both in that line. Motivational, not
+evidence — but a good mnemonic for why this is worth finishing.

@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 sidebar_label: Investigation & Evidence
-title: "Investigation: Can Syrius host the Sentinel from inside the wallet?"
 ---
 
 # Investigation: Can Syrius Be Extended to Host the Sentinel Service Node From Inside the Wallet?
@@ -352,7 +351,7 @@ The architecture is already shaped for it. The insertion points are:
 | **Automatic Sentinel discovery** | `community-nodes.json` is static. No code to fetch a live list from chain or any oracle. | Medium: add a fetch-from-chain path in `_loadDefaultCommunityNodes` |
 | **Sentinel service verification** | No way for Syrius to verify a node is actually a registered Sentinel before trusting it. | Would require chain lookup cross-referenced with IP — architectural gap |
 | **RPC failover** | Syrius holds one active `wsClient`. No connection pooling, no automatic failover if a Sentinel drops. | Medium: `NodeUtils` would need retry-with-next-node logic |
-| **`kLocalIpAddress` is dead** | Declared globally, never used. Was likely intended for something like "is this a local Sentinel" detection. | Unknown intent |
+| ~~**`kLocalIpAddress` is dead**~~ | *Correction: not dead. In the pinned Syrius it is assigned at `main.dart:255` and displayed in `about_card.dart:134` — disregard this row.* | n/a |
 | **Sentinel-specific RPC scope** | Sentinels theoretically could offer a subset of endpoints (read-only, no mempool). Syrius doesn't distinguish endpoint capabilities. | Low urgency initially |
 
 ---

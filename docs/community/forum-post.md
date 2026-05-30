@@ -51,7 +51,9 @@ Syrius connects to it:
 - `lib/utils/constants.dart:123-124` → `ws://127.0.0.1:35998`
 
 A Sentinel service node *is* a public-serving full node. The engine to be one is **already
-executing inside Syrius** — it's just bound to localhost.
+executing inside Syrius** — it just isn't exposed publicly yet (Syrius reaches it at
+`127.0.0.1`; whether it also binds a public interface isn't provable without the
+libznn/go-zenon source).
 
 **3. The full Sentinel staking lifecycle is wired.** Register → deposit QSR → lock ZNN →
 collect → revoke:
@@ -90,9 +92,10 @@ the JSON" framing glosses over:
 **A. Syrius can't currently configure its embedded node.** The FFI surface is `RunNode()`
 and `StopNode()` with **zero arguments** (`embedded_node.dart:15-21`), and Syrius writes no
 node config (the only `.znn` path use is for logs, `main.dart:56`). So the embedded node
-runs with whatever config is baked into `libznn`, bound to localhost. Making it serve
-**publicly** (bind `0.0.0.0`, enable `wss`/TLS, choose a port) is real work that lives in
-**`libznn`/go-zenon**, not just Syrius UI.
+runs with whatever config is baked into `libznn`, and Syrius only reaches it at
+`127.0.0.1` (whether it also binds a public interface isn't determinable without the
+libznn/go-zenon source). Making it serve **publicly** (bind `0.0.0.0`, enable `wss`/TLS,
+choose a port) is real work that lives in **`libznn`/go-zenon**, not just Syrius UI.
 
 **B. A desktop wallet is an awkward host for a 24/7 node.** Syrius is an interactive GUI app
 (it holds a wake-lock only while running, `node_utils.dart:238`). A Sentinel is meant to be

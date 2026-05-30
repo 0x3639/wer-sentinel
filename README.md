@@ -6,8 +6,9 @@ serves RPC from it, so the framework to be a Sentinel is already in the codebase
 it is a buildable extension, and the MVP needs no consensus change.
 
 The docs are written for both human contributors and AI coding agents. Claims about Syrius
-carry `file:line` receipts into the `syrius/` submodule, and provenance is tagged
-(`[DOC]` documented · `[INF]` inferred · `[OPEN]` unresolved).
+carry `file:line` receipts into the `syrius/` submodule (or its pinned `znn_sdk_dart` SDK,
+which is not vendored here), and provenance is tagged (`[DOC]` documented · `[INF]` inferred
+· `[OPEN]` unresolved).
 
 ## What's here
 

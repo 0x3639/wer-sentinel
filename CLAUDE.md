@@ -49,7 +49,9 @@ npm run serve          # preview the production build
    three conflicting ways. Present all three, attributed; don't collapse them. (The site
    *adopts* the greenpaper "service edge" reading for the build, but flags it as a choice.)
 3. **Code is ground truth.** Any claim about Syrius needs a `file:line` receipt into
-   `syrius/`. When the submodule is bumped, re-verify references before trusting them.
+   `syrius/` **or its pinned SDK** (`znn_sdk_dart`; paths like `api/embedded/...` /
+   `model/embedded/...` live in the SDK, not under `syrius/` — verify via `pubspec.lock` +
+   pub cache). When the submodule is bumped, re-verify references before trusting them.
 4. **Markdown is CommonMark.** `markdown.format: 'detect'` in the config means `.md` files
    are *not* MDX — inline `<` and `{` in prose are safe. Use `.mdx` only if you deliberately
    want JSX. Keep code-like content in fences.
